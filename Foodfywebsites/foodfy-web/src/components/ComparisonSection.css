@@ -1,0 +1,294 @@
+/* Clean Pricing Card Section - Reference Style */
+
+.comparison-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+    .comparison-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+    }
+}
+
+.comp-card {
+    width: 100%;
+    max-width: 480px;
+    background: #0B0A11 !important; /* Force true dark background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+    position: relative;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.comp-card:hover {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.comp-card.foodify {
+    border-color: rgba(166, 94, 254, 0.3);
+}
+
+.comp-banner {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+.comp-card.foodify .comp-banner {
+    background: linear-gradient(135deg, #a65efe 0%, #6366f1 100%);
+}
+
+.comp-card.traditional .comp-banner {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comp-content {
+    padding: 2rem 2rem 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.comp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.comp-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff !important; /* Force white text */
+    margin: 0;
+    line-height: 1.25;
+}
+
+.comp-card.traditional .comp-title {
+    font-size: 1.35rem;
+}
+
+.comp-badge {
+    background: rgba(166, 94, 254, 0.15);
+    color: #a65efe;
+    padding: 0.3rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.comp-subtitle {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.comp-price-box {
+    margin-bottom: 1.5rem;
+}
+
+.comp-strike {
+    font-size: 1rem;
+    color: #9ca3af;
+    text-decoration: line-through;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.comp-main-price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.comp-amount {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+.comp-context {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7); /* Brighter context */
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.comp-desc {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.comp-features-group {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.comp-features-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.comp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.comp-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9); /* Brighter text for better contrast */
+}
+
+.comp-list li .icon {
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.text-red {
+    color: #ef4444;
+}
+
+.text-green {
+    color: #10B981;
+}
+
+.text-dark {
+    color: #ffffff;
+}
+
+.comp-btn {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 2rem; /* Fully rounded button like reference */
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.2s;
+    margin-top: auto;
+    cursor: pointer;
+    border: none;
+    display: block;
+    text-decoration: none;
+}
+
+.comp-card.foodify .comp-btn {
+    background: linear-gradient(135deg, #a65efe 0%, #6366f1 100%);
+    color: #fff;
+}
+
+.comp-card.foodify .comp-btn:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(166, 94, 254, 0.4);
+}
+
+.comp-card.traditional .comp-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.comp-card.traditional .comp-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-1px);
+}
+
+/* Optional VS circle between the cards */
+.brutalist-comparison-vs {
+    display: none; /* Might look cleaner without it since banners differ */
+}
+
+/* Savings Banner from original kept intact */
+.brutalist-savings-banner {
+    background: linear-gradient(135deg, rgba(166, 94, 254, 0.15) 0%, rgba(99, 102, 241, 0.1) 100%);
+    border: 1px solid rgba(166, 94, 254, 0.4);
+    border-radius: var(--radius-lg);
+    padding: 3.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(166, 94, 254, 0.2);
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brutalist-savings-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(166, 94, 254, 0.2), transparent);
+    transform: skewX(-20deg);
+}
+
+.brutalist-savings-banner.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.brutalist-savings-banner.visible::before {
+    animation: shine-banner 3s infinite 1s;
+}
+
+@keyframes shine-banner {
+    0% { left: -100%; }
+    15% { left: 200%; }
+    100% { left: 200%; }
+}
+
+@media (max-width: 768px) {
+    .comp-content {
+        padding: 1.75rem 1.5rem;
+    }
+    .comp-amount {
+        font-size: 2.75rem;
+    }
+    .comp-card {
+        border-radius: 1.25rem;
+        max-width: 100%;
+    }
+    .comp-title {
+        font-size: 1.35rem;
+    }
+}

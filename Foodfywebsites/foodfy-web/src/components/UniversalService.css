@@ -1,0 +1,179 @@
+/* Clean Universal Service */
+.universal-service-section {
+    background: #0a0510;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(166, 94, 254, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(255, 115, 0, 0.1) 0%, transparent 30%);
+    padding: 6rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.universal-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .universal-grid {
+        grid-template-columns: 1fr 1.1fr;
+        gap: 6rem;
+    }
+}
+
+.universal-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.locals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.shopify-local-card {
+    display: flex;
+    align-items: stretch;
+    background: transparent;
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.shopify-local-card:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.shopify-local-card.active {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-indicator {
+    width: 3px;
+    height: 100%;
+    background: #a65efe;
+    border-radius: 2px;
+    margin-right: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.shopify-local-card.active .card-indicator {
+    opacity: 1;
+}
+
+.card-main-content {
+    flex: 1;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.shopify-local-card.active .card-title {
+    color: #ffffff;
+}
+
+.sparkle-icon {
+    color: #a65efe;
+    font-size: 1.2rem;
+    animation: pulse-sparkle 2s infinite ease-in-out;
+}
+
+@keyframes pulse-sparkle {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.shopify-local-card.active .card-desc {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.universal-visuals {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.universal-mockup-container {
+    width: 100%;
+    position: relative;
+}
+
+.mockup-frame {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 24px;
+    background: #0d0d0d;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+}
+
+.mockup-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
+    transition: all 0.5s ease;
+}
+
+.mockup-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle at center, rgba(166, 94, 254, 0.15) 0%, transparent 60%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.highlight-gradient {
+    background: linear-gradient(90deg, #a65efe 0%, #6366f1 50%, #a65efe 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    animation: shine-text 4s linear infinite;
+}
+
+@keyframes shine-text {
+    to { background-position: 200% center; }
+}

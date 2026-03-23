@@ -1,0 +1,415 @@
+/* =============================================
+   Services Selector – Full Color + Logo Carousel
+   ============================================= */
+
+/* ---- Section base ---- */
+.services-section {
+    position: relative;
+    overflow-x: clip;  /* hides horizontal scroll without cutting vertical content */
+    background: #0a0510; /* Solid dark purple background */
+    transition: background 0.6s ease;
+}
+
+/* ---- Tinted overlay (vignette on the sides) ---- */
+.services-color-overlay {
+    position: absolute;
+    inset: 0;
+    background: transparent; /* Removed the radial gradient */
+    pointer-events: none;
+    z-index: 1;
+    transition: background 0.6s ease;
+}
+
+/* =============================================
+   Inclined logo carousel background
+   ============================================= */
+.logo-carousel-bg {
+    position: absolute;
+    inset: -40% -10%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    transform: rotate(-15deg) translateY(-5%);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.15;
+}
+
+.logo-carousel-row {
+    overflow: hidden;
+    width: 100%;
+}
+
+.logo-carousel-track {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    animation: logo-ticker 35s linear infinite;
+}
+
+.logo-carousel-track--reverse {
+    animation-direction: reverse;
+    animation-duration: 45s;
+}
+
+.logo-carousel-img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: brightness(0) invert(1);
+}
+
+@keyframes logo-ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/* =============================================
+   Tabs
+   ============================================= */
+.brutalist-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 0.875rem 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+.brutalist-tab:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.brutalist-tab.active {
+    color: #fff;
+    /* background / borderColor / boxShadow set inline per service color */
+}
+
+.brutalist-tab .tab-info span {
+    color: inherit !important;
+}
+
+.brutalist-tab .tab-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease;
+    position: relative;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+}
+
+.brutalist-tab .tab-icon-wrapper.ia-agent-thumb {
+    align-items: flex-end;
+    margin-right: 0.5rem;
+    overflow: hidden;
+}
+
+/* Small colored dot per tab */
+.tab-color-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-left: auto;
+    opacity: 0.85;
+}
+
+/* =============================================
+   Content card
+   ============================================= */
+.brutalist-card {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    transition: background 0.5s ease, border-color 0.5s ease;
+}
+
+@media (max-width: 768px) {
+    .brutalist-card {
+        padding: 1.25rem !important;
+    }
+}
+
+/* =============================================
+   Status badge & tags
+   ============================================= */
+.tab-status-badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #059669;
+    background: #ecfdf5;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-full);
+    border: 1px solid #a7f3d0;
+    display: inline-block;
+    margin-top: 0.3rem;
+}
+
+.service-status-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.875rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid;
+    transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+}
+
+/* =============================================
+   Video teaser
+   ============================================= */
+.brutalist-video-teaser {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.brutalist-video-teaser:hover {
+    transform: scale(1.03);
+}
+
+.video-thumb {
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.4s ease;
+}
+
+/* =============================================
+   Hire button
+   ============================================= */
+.hire-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 5;
+}
+
+.hire-btn:hover {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+    .hire-btn {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-bottom: 1.5rem;
+        width: 100%;
+    }
+}
+
+/* =============================================
+   Mockup wrapper
+   ============================================= */
+.brutalist-mockup-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.brutalist-mockup-main {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm);
+    height: 30vh;
+    min-height: 180px;
+    max-height: 320px;
+    transition: border-color 0.4s ease;
+}
+
+.brutalist-mockup-side {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.brutalist-mini-photo {
+    flex: 1;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: background 0.4s ease, border-color 0.4s ease;
+    border: 1px solid;
+    padding: 0.25rem;
+    text-align: center;
+}
+
+/* =============================================
+   Newsletter / input
+   ============================================= */
+.brutalist-input {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    flex-grow: 1;
+    outline: none;
+    font-weight: 500;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+}
+
+.brutalist-input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.brutalist-input:focus {
+    border-color: rgba(var(--svc-color-rgb, 14,165,233), 0.6);
+    box-shadow: 0 0 0 3px rgba(var(--svc-color-rgb, 14,165,233), 0.12);
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+@media (max-width: 1023px) {
+    .services-layout {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+    }
+
+    .services-tabs {
+        flex-direction: row !important;
+        overflow-x: auto;
+        overflow-y: visible;
+        padding-bottom: 0.75rem;
+        padding-inline: 0;
+        margin-inline: 0;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .services-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .brutalist-tab {
+        min-width: 180px;
+        max-width: 220px;
+        flex-shrink: 0;
+    }
+
+    .services-content-card {
+        width: 100%;
+        box-sizing: border-box;
+        overflow: visible;
+    }
+
+    .brutalist-mockup-wrapper {
+        grid-template-columns: 1fr;
+        padding: 0.75rem;
+    }
+
+    .brutalist-mockup-main {
+        height: 180px;
+    }
+
+    .logo-carousel-bg {
+        opacity: 0.08;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-section {
+        padding: 3rem 0;
+    }
+
+    .brutalist-tab {
+        padding: 0.75rem;
+        gap: 0.625rem;
+        min-width: 160px;
+    }
+
+    .brutalist-tab .tab-icon-wrapper {
+        width: 36px;
+        height: 36px;
+    }
+
+    .brutalist-card {
+        padding: 1.25rem !important;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .video-thumb {
+        width: 44px;
+        height: 44px;
+    }
+
+    .hire-btn {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-bottom: 1rem;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .brutalist-mockup-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .brutalist-mockup-main {
+        height: 140px;
+        min-height: 120px;
+    }
+
+    .brutalist-mockup-side {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .brutalist-mini-photo {
+        font-size: 0.75rem;
+    }
+
+    /* Hide logo carousel on very small screens for perf */
+    .logo-carousel-bg {
+        display: none;
+    }
+}

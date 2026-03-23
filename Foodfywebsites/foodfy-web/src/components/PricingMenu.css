@@ -1,0 +1,310 @@
+.pricing-menu-overlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #f1f2f3;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 4rem;
+    z-index: 999;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    /* Shopify Style Deployment */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    max-height: 90vh;
+    overflow-y: auto;
+    pointer-events: none;
+}
+
+.pricing-menu-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.pricing-menu-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.pricing-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #4a4a4a;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.pricing-header h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: #1a1a1a;
+    font-weight: 600;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    line-height: 1.2;
+}
+
+.pricing-subtitle {
+    font-size: 1.1rem;
+    color: #616161;
+}
+
+/* Billing Toggle */
+.billing-toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.billing-toggle {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 0.25rem;
+    border-radius: 999px;
+    display: flex;
+    gap: 0.25rem;
+}
+
+.billing-toggle button {
+    padding: 0.6rem 1.5rem;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #4a4a4a;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.billing-toggle button.active {
+    background: #000;
+    color: #fff;
+}
+
+.discount-tag {
+    font-size: 0.8rem;
+    color: #10b981;
+}
+
+.billing-toggle button.active .discount-tag {
+    color: #4ade80;
+}
+
+/* Pricing Grid */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    align-items: stretch;
+}
+
+/* Staggered Cards */
+.pricing-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.pricing-menu-overlay.open .pricing-card:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.pricing-menu-overlay.open .pricing-card:nth-child(2) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+.pricing-menu-overlay.open .pricing-card:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.pricing-menu-overlay.open .pricing-card:nth-child(4) { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+
+.pricing-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.plan-offer-banner {
+    background: #10b981;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    text-align: center;
+}
+
+.plus-banner {
+    background: #3b82f6;
+}
+
+.pricing-card-body {
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-card-body h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.popular-badge {
+    background: #ccfbf1;
+    color: #115e59;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 4px;
+}
+
+.plan-desc {
+    font-size: 0.95rem;
+    color: #616161;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+    min-height: 3rem;
+}
+
+.plan-price {
+    margin-bottom: 1.5rem;
+}
+
+.plan-price .amount {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    display: block;
+}
+
+.price-details {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    color: #757575;
+}
+
+.currency-code {
+    font-weight: 600;
+}
+
+.btn-choose-plan {
+    width: 100%;
+    padding: 0.9rem;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: background 0.2s ease;
+}
+
+.btn-choose-plan:hover {
+    background: #333;
+}
+
+.plus-btn {
+    background: #f1f2f3;
+    color: #1a1a1a;
+    border: 1px solid #e0e0e0;
+}
+
+.plus-btn:hover {
+    background: #e5e7eb;
+}
+
+.features-section h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1.25rem;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plan-features li {
+    font-size: 0.85rem;
+    color: #4a4a4a;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    line-height: 1.4;
+}
+
+.check-icon {
+    width: 1rem;
+    height: 1rem;
+    color: #10b981;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+}
+
+.plus-footer {
+    margin-top: auto;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.contact-link {
+    color: #1a1a1a;
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-menu-content {
+        padding: 2rem 1rem;
+    }
+    
+    .billing-toggle {
+        flex-direction: column;
+        border-radius: 12px;
+    }
+    
+    .billing-toggle button {
+        justify-content: center;
+    }
+}

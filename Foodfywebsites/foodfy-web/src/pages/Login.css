@@ -1,0 +1,250 @@
+.shopify-login-page {
+    min-height: 100vh;
+    background: radial-gradient(circle at center, #1a0b2e 0%, #060a12 100%); /* Deep Foodfy Purple background */
+    color: white;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem;
+}
+
+.shopify-login-header {
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.shopify-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.shopify-foodfy-icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.shopify-foodfy-text {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+}
+
+.shopify-login-main {
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+}
+
+.shopify-login-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.shopify-login-subtitle {
+    font-size: 1.1rem;
+    color: #a0aec0;
+    margin-bottom: 2.5rem;
+}
+
+.shopify-login-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    color: #1a1a1a;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.shopify-form-group {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.shopify-form-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 0.25rem;
+    margin-left: 0.75rem;
+}
+
+.shopify-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.shopify-input:focus {
+    border-color: #1a1a1a;
+}
+
+.shopify-btn-primary {
+    width: 100%;
+    background-color: #1a202c;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.shopify-btn-primary:hover {
+    background-color: #171923;
+}
+
+.shopify-divider {
+    position: relative;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.shopify-divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #e2e8f0;
+}
+
+.shopify-divider span {
+    position: relative;
+    background-color: white;
+    padding: 0 1rem;
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+/* Login Card Header (Inside the card) */
+.shopify-login-card-header {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.shopify-login-title-card {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.25rem;
+}
+
+.shopify-login-subtitle-card {
+    font-size: 0.95rem;
+    color: #6d7175;
+    font-weight: 400;
+}
+
+.shopify-social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    flex-direction: row; /* Row layout like Shopify */
+}
+
+.shopify-social-btn {
+    width: auto;
+    flex: 1;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.shopify-social-btn span {
+    display: none; /* Hide text in icons row like Shopify */
+}
+
+.shopify-social-btn:hover {
+    background-color: #f7fafc;
+    border-color: #cbd5e0;
+}
+
+.shopify-social-buttons .shopify-social-btn img,
+.shopify-social-buttons .shopify-social-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.shopify-social-buttons .shopify-social-btn {
+    padding: 1rem;
+}
+
+.shopify-footer-text .arrow {
+    margin-left: 0.25rem;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+.shopify-footer-text a:hover .arrow {
+    transform: translateX(3px);
+}
+
+.shopify-footer-text {
+    font-size: 0.85rem;
+    color: #4a5568;
+    margin-top: 1rem;
+}
+
+.shopify-footer-text a {
+    color: #1a1a1a;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.shopify-footer-text a:hover {
+    text-decoration: underline;
+}
+
+.shopify-country-selector {
+    margin-top: 3rem;
+}
+
+.shopify-country-btn {
+    background: #171c28;
+    border: 1px solid #2d3748;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chevron-down {
+    font-size: 0.6rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+    .shopify-login-title {
+        font-size: 1.8rem;
+    }
+    .shopify-login-card {
+        padding: 2rem 1.5rem;
+    }
+    .shopify-social-buttons {
+        gap: 0.5rem;
+    }
+}
